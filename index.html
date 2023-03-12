@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/0fefb6d925.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Générateur de mot de passe</title>
+</head>
+
+<body>
+    <!-- Affichage du mot de passe -->
+    <section class="password-generation-container">
+        <div class="password-field">
+            <input type="text" name="password-container" id="password-container" maxlength="50">
+            <div class="icon-container">
+                <!-- Icône copier-coller -->
+                <i class="fa-regular fa-clone"></i>
+                <!-- Icône re-générer -->
+                <i class="fa-solid fa-sync"></i>
+            </div>
+        </div>
+        <div class="password-strength-bar">
+            <div class="password-strength-bar-fill"></div>
+        </div>
+    </section>
+    <!-- Contenu de la page -->
+    <main class="main-container">
+        <!-- Formulaire de génération -->
+        <div class="form-container">
+            <h1 class="site-title">Paramétrez votre mot de passe</h1>
+            <form action="generate-password.php" method="POST">
+                <!-- Paramètres de génération -->
+                <div class="settings-1">
+                    <label for="password-length">Longueur du mot de passe</label>
+                    <div class="split-row">
+                        <input type="number" name="password-length-value" id="password-length-value" min="1" max="50"
+                            value="10">
+                        <input type="range" name="password-length" id="password-length" min="1" max="50" value="10">
+                    </div>
+                </div>
+                <div class="settings-2">
+                    <div class="option1-container">
+                        <input type="radio" name="easy-to-spell" id="easy-to-spell" value="easy-to-spell">
+                        <label for="easy-to-spell">Facile à dire</label>
+                    </div>
+                    <div class="option2-container">
+                        <input type="radio" name="easy-to-read" id="easy-to-read" value="easy-to-read">
+                        <label for="easy-to-read">Facile à lire</label>
+                    </div>
+                    <div class="option3-container">
+                        <input type="radio" name="all-characters" id="all-characters" value="all-characters">
+                        <label type="all-characters">Tous les caractères</label>
+                    </div>
+                </div>
+                <div class="settings-3">
+                    <div class="option1-container">
+                        <input type="checkbox" name="lowercase" id="lowercase" value="lowercase">
+                        <label for="lowercase">Minuscules</label>
+                    </div>
+                    <div class="option2-container">
+                        <input type="checkbox" name="uppercase" id="uppercase" value="uppercase">
+                        <label for="uppercase">Majuscules</label>
+                    </div>
+                    <div class="option3-container">
+                        <input type="checkbox" name="numbers" id="numbers" value="numbers">
+                        <label for="numbers">Chiffres</label>
+                    </div>
+                    <div class="option4-container">
+                        <input type="checkbox" name="symbols" id="symbols" value="symbols">
+                        <label for="symbols">Symboles</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
